@@ -125,7 +125,9 @@ public class IconEngine {
      * path.
      */
     private static BufferedImage getIconWin(String filePath) {
-        return WindowsIconExtractor.getIcon(filePath);
+        IconReceiver iconReveiver = new IconReceiver();
+        WindowsIconExtractor.getIcon(filePath, iconReveiver);
+        return iconReveiver.bufferedImage;
     }
 
     /**

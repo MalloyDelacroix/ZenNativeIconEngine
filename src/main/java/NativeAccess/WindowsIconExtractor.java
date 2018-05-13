@@ -5,6 +5,8 @@ import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.*;
+import core.IconReceiver;
+
 import java.awt.image.BufferedImage;
 
 
@@ -28,10 +30,15 @@ public class WindowsIconExtractor {
      * and the library is able to call back into this class with the extracted HICON.
      */
     static {
-        Native.register(WindowsIconExtractor.class, "WindowsIconExtractor");
+        try {
+            Native.register(WindowsIconExtractor.class, "WindowsIconExtractor");
+        } catch (Exception e) {
+            System.out.println("Static method exception");
+            e.printStackTrace();
+        }
     }
 
-    public static native BufferedImage getIcon(String path, Callback callback);
+    public static native void getIcon(String path, Callback callback);
 
     /**
      * Calls WindowsIconExtractor library to extract the large icon for the supplied file path
@@ -39,12 +46,12 @@ public class WindowsIconExtractor {
      *
      * @param filePath The path of the file for which an icon is to be extracted.
      */
-    public static BufferedImage getIcon(String filePath) {
-        return getIcon(filePath, new Callback() {
-            public BufferedImage callback(WinDef.HICON icon) {
+    public static void getIcon(String filePath, IconReceiver receiver) {
+        getIcon(filePath, new Callback() {
+            public void callback(WinDef.HICON icon) {
                 BufferedImage buffImage = drawIcon(icon);
                 User32.INSTANCE.DestroyIcon(icon);
-                return buffImage;
+                receiver.bufferedImage = buffImage;
             }
         });
     }
