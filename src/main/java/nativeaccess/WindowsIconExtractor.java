@@ -14,14 +14,6 @@ import java.awt.image.BufferedImage;
  * A class that extracts system icons from windows.  This class relies on the WindowsIconExtractor.dll
  * file for extracting the correct icon from the system.  The icon that is extracted is windows size
  * Jumbo (256x256).
- *
- * To anyone who uses this application and happens to find themselves looking at this file:
- * I hope that you enjoy the look of the windows icons displayed by this app.  To get here was the
- * result of much hard and trying work and research.  I had to learn more about bitmaps than I want
- * to know, a lot of basic C and C++, a fair amount of the windows api that deals with icons (which is
- * much more than I would have expected), and how to use JNA.  I hope that this work is appreciated when
- * admiring these brilliant icons (with transparent background (another almost weeks worth of work))
- * and the splendor that they bring to your file browser viewing experience.
  */
 public class WindowsIconExtractor {
 
