@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Kyle/CLionProjects/IconExtractor/library.cpp
+library.h
+C:/Users/Kyle/CLionProjects/IconExtractor/library.h
+shlobj.h
+-
+commoncontrols.h
+-
+
+C:/Users/Kyle/CLionProjects/IconExtractor/library.h
+rpc.h
+-
+

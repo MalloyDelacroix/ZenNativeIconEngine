@@ -15,7 +15,6 @@ public class IconEngineTest {
     void getIconImage() throws URISyntaxException, IOException {
         URL resource = IconEngineTest.class.getClassLoader().getResource("test_icon.png");
         File testFile = new File(resource.toURI());
-//        System.out.println(String.format("Exists: %s\nPath: %s", testFile.exists(), testFile.getPath()));
 
         assertNotNull(IconEngine.getIconBufferedImage(testFile));
         assertNotNull(IconEngine.getIconImage(testFile));
