@@ -1,6 +1,6 @@
 package core;
 
-import NativeAccess.WindowsIconExtractor;
+import nativeaccess.WindowsIconExtractor;
 import javafx.scene.image.Image;
 
 import javax.imageio.ImageIO;

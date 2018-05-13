@@ -1,4 +1,4 @@
-package NativeAccess;
+package nativeaccess;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Memory;

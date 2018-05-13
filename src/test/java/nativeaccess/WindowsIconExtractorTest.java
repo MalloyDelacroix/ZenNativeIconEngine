@@ -1,6 +1,5 @@
 package nativeaccess;
 
-import NativeAccess.WindowsIconExtractor;
 import core.IconEngineTest;
 import core.IconReceiver;
 import org.junit.jupiter.api.Test;

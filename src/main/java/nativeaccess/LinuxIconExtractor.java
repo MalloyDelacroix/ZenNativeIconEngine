@@ -1,4 +1,4 @@
-package NativeAccess;
+package nativeaccess;
 
 public class LinuxIconExtractor {
 }
