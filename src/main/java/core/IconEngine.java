@@ -31,7 +31,7 @@ public class IconEngine {
     /**
      * The os type.  Determines which of the native extractors will be used to extract the icon.
      */
-    private static String os = getOs();
+    public static String os = getOs();
 
     /**
      * Determines the host os and returns an os code String to be used in by this class.
@@ -141,9 +141,9 @@ public class IconEngine {
      * path.
      */
     private static BufferedImage getIconWin(String filePath) {
-        IconReceiver iconReveiver = new IconReceiver();
-        WindowsIconExtractor.getIcon(filePath, iconReveiver);
-        return iconReveiver.bufferedImage;
+        IconReceiver iconReceiver = new IconReceiver();
+        WindowsIconExtractor.getIcon(filePath, iconReceiver);
+        return iconReceiver.bufferedImage;
     }
 
     /**

@@ -21,6 +21,8 @@ import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.*;
+import core.DllLoader;
+import core.IconEngine;
 import core.IconReceiver;
 
 import java.awt.image.BufferedImage;
@@ -38,11 +40,14 @@ public class WindowsIconExtractor {
      * and the library is able to call back into this class with the extracted HICON.
      */
     static {
-        try {
-            Native.register(WindowsIconExtractor.class, "WindowsIconExtractor");
-        } catch (Exception e) {
-            System.out.println("Static method exception");
-            e.printStackTrace();
+        int tries = 0;
+        while (tries++ < 3) {
+            try {
+                Native.register(WindowsIconExtractor.class, "WindowsIconExtractor");
+                break;
+            } catch (UnsatisfiedLinkError e) {
+                DllLoader.loadDll(IconEngine.os);
+            }
         }
     }
 

@@ -16,17 +16,56 @@
 
 package core;
 
-import com.sun.jna.platform.FileUtils;
-import nativeaccess.WindowsIconExtractor;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Date;
 
+
+/**
+ * Class responsible for loading the icon extractor dll for the operating system.  Dll files packaged in the jar
+ * file with this utility must be extracted in order to be used.  This class handles this operation.
+ */
 public class DllLoader {
 
-    private final static String LIB = "/lib/";
+    private final static String LIB = System.getProperty("java.io.tmpdir") + File.separator + "SomeGuySoftware" +
+            File.separator + "ZenNativeIconEngine" + File.separator + "lib" + File.separator;
 
+    public static void loadDll(String system) {
+        if (system.equals("win32")) {
+            loadWindowsIconExtractorDll();
+        } else {
+            // TODO: add other dll loaders here when developed
+            System.out.println("No dll loader for system");
+        }
+    }
+
+    /**
+     * Extracts the WindowsIconExtractor.dll file from the resource package to a temp directory on the Windows system
+     * when this utility is packaged as a jar file.
+     */
+    private static void loadWindowsIconExtractorDll() {
+        String dllName = "WindowsIconExtractor.dll";
+        File windowsDll = new File(LIB + dllName);
+        if (! windowsDll.exists()) {
+            try {
+                InputStream dllFileStream = DllLoader.class.getClassLoader().getResourceAsStream(dllName);
+                File outFile = new File(LIB);
+                OutputStream out = FileUtils.openOutputStream(outFile);
+                IOUtils.copy(dllFileStream, out);
+                dllFileStream.close();
+                out.close();
+                System.load(outFile.toString());
+                System.out.println("Dll loaded");
+            } catch (IOException e) {
+                System.out.println("Failed to load dll");
+            }
+        } else {
+            System.load(windowsDll.toString());
+        }
+    }
 
 }
