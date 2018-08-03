@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\Kyle\CLionProjects\IconExtractor
+"C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\Kyle\IdeaProjects\FileBrowser\ZenNativeIconEngine\src\main\native\win32
 -- The C compiler identification is MSVC 19.13.26132.0
 -- The CXX compiler identification is MSVC 19.13.26132.0
 -- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.13.26128/bin/Hostx64/x64/cl.exe
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Kyle/CLionProjects/IconExtractor/cmake-build-debug
+-- Build files have been written to: C:/Users/Kyle/IdeaProjects/FileBrowser/ZenNativeIconEngine/src/main/native/win32/cmake-build-debug
