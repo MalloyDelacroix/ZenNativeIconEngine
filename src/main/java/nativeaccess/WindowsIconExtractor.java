@@ -26,6 +26,8 @@ import core.IconEngine;
 import core.IconReceiver;
 
 import java.awt.image.BufferedImage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -35,19 +37,30 @@ import java.awt.image.BufferedImage;
  */
 public class WindowsIconExtractor {
 
+    private static final Logger logger = Logger.getLogger(WindowsIconExtractor.class.getName());
+
     /**
      * Registers the WindowsIconExtractor library so that it may be called into from this class,
      * and the library is able to call back into this class with the extracted HICON.
      */
     static {
+        String libName = "WindowsIconExtractor";
+        boolean loaded = false;
         int tries = 0;
         while (tries++ < 3) {
             try {
-                Native.register(WindowsIconExtractor.class, "WindowsIconExtractor");
+                Native.register(WindowsIconExtractor.class, libName);
+                loaded = true;
                 break;
             } catch (UnsatisfiedLinkError e) {
+                logger.info(String.format("Failed to find %s.dll in path; unpacking and loading %s.dll", libName, libName));
                 DllLoader.loadDll(IconEngine.os);
+            } catch (Exception ex) {
+                logger.log(Level.WARNING, "Failed to load WindowsIconExtractor.dll", ex);
             }
+        }
+        if (! loaded) {
+            logger.warning("Failed to load " + libName);
         }
     }
 

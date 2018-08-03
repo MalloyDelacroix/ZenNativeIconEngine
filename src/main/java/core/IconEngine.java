@@ -25,8 +25,11 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class IconEngine {
+
+    private static final Logger logger = Logger.getLogger(IconEngine.class.getName());
 
     /**
      * The os type.  Determines which of the native extractors will be used to extract the icon.
@@ -46,6 +49,7 @@ public class IconEngine {
         } else if (name.contains("nix")) {
             return "linux";
         } else {
+            logger.warning("Unsupported operating system");
             throw new UnsupportedOSException("This operating system is not supported: " + os);
         }
     }
@@ -88,6 +92,7 @@ public class IconEngine {
         if (bytes != null) {
             return new Image(new ByteArrayInputStream(bytes));
         } else {
+            logger.warning("Failed to retrieve icon for file: " + file.getName());
             return null;
         }
     }
@@ -109,6 +114,7 @@ public class IconEngine {
             out.flush();
             return out.toByteArray();
         } else {
+            logger.warning("Failed to retrieve byte array for file: " + file.getName());
             return null;
         }
     }

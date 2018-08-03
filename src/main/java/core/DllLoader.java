@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.logging.Logger;
 
 
 /**
@@ -30,6 +31,8 @@ import java.io.OutputStream;
  * file with this utility must be extracted in order to be used.  This class handles this operation.
  */
 public class DllLoader {
+
+    private static final Logger logger = Logger.getLogger(DllLoader.class.getName());
 
     private final static String LIB = System.getProperty("java.io.tmpdir") + File.separator + "SomeGuySoftware" +
             File.separator + "ZenNativeIconEngine" + File.separator + "lib" + File.separator;
@@ -39,7 +42,7 @@ public class DllLoader {
             loadWindowsIconExtractorDll();
         } else {
             // TODO: add other dll loaders here when developed
-            System.out.println("No dll loader for system");
+            logger.warning("No dll loader available for system");
         }
     }
 
