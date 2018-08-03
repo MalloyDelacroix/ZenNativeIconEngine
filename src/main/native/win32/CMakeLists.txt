@@ -3,4 +3,4 @@ project(IconExtractor)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(IconExtractor SHARED library.cpp library.h)
+add_library(IconExtractor SHARED win32iconextractor.cpp win32iconextractor.h)
