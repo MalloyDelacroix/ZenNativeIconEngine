@@ -1,4 +1,4 @@
-package core;
+package zennativeiconengine.core;
 
 import java.io.File;
 import java.io.IOException;

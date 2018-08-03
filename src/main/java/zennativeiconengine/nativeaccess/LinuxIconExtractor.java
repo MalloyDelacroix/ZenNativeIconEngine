@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package nativeaccess;
+package zennativeiconengine.nativeaccess;
 
 public class LinuxIconExtractor {
 }

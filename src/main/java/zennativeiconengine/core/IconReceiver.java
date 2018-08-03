@@ -14,12 +14,21 @@
  *    limitations under the License.
  */
 
-package core;
+package zennativeiconengine.core;
 
-public class UnsupportedOSException extends RuntimeException {
+import java.awt.image.BufferedImage;
 
-    public UnsupportedOSException(String message) {
-        super(message);
+
+/**
+ * A container class that is used as a container to receive a BufferedImage
+ * from a native method callback function.
+ */
+public class IconReceiver {
+
+    public BufferedImage bufferedImage;
+
+    public IconReceiver() {
+
     }
 
 }
