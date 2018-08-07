@@ -1,14 +1,13 @@
 # ZenNativeIconEngine
-A utility intended for javafx projects to get native file system icons for supplied file paths.  The icon engine can return a native icon as a JavaFX Image, a byte array, or a BufferedImage.  All that is needed is a path to an existing file or directory.  
+An easy to use package to get native file system icons for supplied file paths.  The icon engine can return an icon as a ready to use JavaFX image object, a byte array, or a BufferedImage object.
 
-The icons returned from the icon engine are large (256x256 - the max available on windows), good quality, and complete icons.  Icons also work for high dpi displays.
+The icons returned from the icon engine are large (256x256 - the max available on windows), good quality, and complete icons that also work well on high dpi displays.
 
 ## Using Zen Native Icon Engine
-To use the icon engine, package the project into a jar file (or grab a prebuilt jar file from the release section) and add it to your projects class path.  
-
-Below is a usage example:
+Setup and use are as simple as adding the jar to your classpath, and giving the engine an existing file path.
 
 ```java
+
 import core.IconEngine;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
@@ -26,15 +25,11 @@ public class Controller {
     @FXML
     void initialize() {
         File file = new File("C:\\Program Files\\JetBrains\\IntelliJ IDEA 2018.2\\bin\\idea.exe");
-        imageView.setImage(loadImage(file));
-    }
-
-    private Image loadImage(File file) {
         try {
-            return IconEngine.getIconImage(file);
+            Image icon = IconEngine.getIconImage(file);
+            imageView.setImage(icon);
         } catch (IOException e) {
             // handle exception
-            return null;
         }
     }
 
