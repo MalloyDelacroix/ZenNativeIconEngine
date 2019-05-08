@@ -1,7 +1,7 @@
 # ZenNativeIconEngine
 An easy to use package to get native file system icons for supplied file paths.  The icon engine can return an icon as a ready to use JavaFX image object, a byte array, or a BufferedImage object.
 
-The icons returned from the icon engine are large (256x256 - the max available on windows), good quality, and complete icons that also work well on high dpi displays.
+The icons returned from the icon engine are large (256x256 - the max available on windows), high quality, and complete icons that also display well on high dpi displays.
 
 ## Using Zen Native Icon Engine
 Setup and use are as simple as adding the jar to your classpath, and giving the engine an existing file path.
