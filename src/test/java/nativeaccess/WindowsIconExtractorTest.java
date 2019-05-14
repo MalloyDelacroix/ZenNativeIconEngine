@@ -1,7 +1,7 @@
 package zennativeiconengine.nativeaccess;
 
-import zennativeiconengine.core.IconEngineTest;
-import zennativeiconengine.core.IconReceiver;
+import zennativeiconengine.base.IconEngineTest;
+import zennativeiconengine.base.IconReceiver;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

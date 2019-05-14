@@ -21,9 +21,9 @@ import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.*;
-import zennativeiconengine.core.DllLoader;
-import zennativeiconengine.core.IconEngine;
-import zennativeiconengine.core.IconReceiver;
+import zennativeiconengine.base.DllLoader;
+import zennativeiconengine.base.IconEngine;
+import zennativeiconengine.base.IconReceiver;
 
 import java.awt.image.BufferedImage;
 import java.util.logging.Level;

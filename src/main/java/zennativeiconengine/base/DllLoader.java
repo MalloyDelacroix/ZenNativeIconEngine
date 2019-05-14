@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.core;
+package zennativeiconengine.base;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
