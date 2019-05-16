@@ -14,9 +14,9 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.base;
+package zenengine.base;
 
-import zennativeiconengine.nativeaccess.WindowsIconExtractor;
+import zenengine.nativeaccess.WindowsIconExtractor;
 import javafx.scene.image.Image;
 
 import javax.imageio.ImageIO;

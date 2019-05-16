@@ -14,12 +14,7 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.base;
+package zenengine.nativeaccess;
 
-public class UnsupportedOSException extends RuntimeException {
-
-    public UnsupportedOSException(String message) {
-        super(message);
-    }
-
+public class MacIconExtractor {
 }

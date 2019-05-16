@@ -14,7 +14,7 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.base;
+package zenengine.base;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -56,12 +56,12 @@ public class DllLoader {
         if (! windowsDll.exists()) {
             try {
                 InputStream dllFileStream = DllLoader.class.getClassLoader().getResourceAsStream(dllName);
-                File outFile = new File(LIB);
-                OutputStream out = FileUtils.openOutputStream(outFile);
+//                File outFile = new File(LIB);
+                OutputStream out = FileUtils.openOutputStream(windowsDll);
                 IOUtils.copy(dllFileStream, out);
                 dllFileStream.close();
                 out.close();
-                System.load(outFile.toString());
+                System.load(windowsDll.toString());
                 System.out.println("Dll loaded");
             } catch (IOException e) {
                 System.out.println("Failed to load dll");

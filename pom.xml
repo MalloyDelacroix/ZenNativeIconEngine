@@ -6,7 +6,8 @@
 
     <groupId>net.someguysoftware.zen</groupId>
     <artifactId>zen-native-icon-engine</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>12</java.version>

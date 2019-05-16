@@ -14,10 +14,12 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.nativeaccess;
+package zenengine.base;
 
-public class LinuxIconExtractor {
+public class UnsupportedOSException extends RuntimeException {
 
-    
+    public UnsupportedOSException(String message) {
+        super(message);
+    }
 
 }

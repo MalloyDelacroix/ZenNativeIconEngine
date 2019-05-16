@@ -14,16 +14,16 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.nativeaccess;
+package zenengine.nativeaccess;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Memory;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.*;
-import zennativeiconengine.base.DllLoader;
-import zennativeiconengine.base.IconEngine;
-import zennativeiconengine.base.IconReceiver;
+import zenengine.base.DllLoader;
+import zenengine.base.IconEngine;
+import zenengine.base.IconReceiver;
 
 import java.awt.image.BufferedImage;
 import java.util.logging.Level;

@@ -14,21 +14,10 @@
  *    limitations under the License.
  */
 
-package zennativeiconengine.base;
+package zenengine.nativeaccess;
 
-import java.awt.image.BufferedImage;
+public class LinuxIconExtractor {
 
-
-/**
- * A container class that is used as a container to receive a BufferedImage
- * from a native method callback function.
- */
-public class IconReceiver {
-
-    public BufferedImage bufferedImage;
-
-    public IconReceiver() {
-
-    }
+    
 
 }

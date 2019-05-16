@@ -1,10 +1,12 @@
-package zennativeiconengine.base;
+package zenengine.base;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import javafx.scene.image.Image;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,8 +18,8 @@ public class IconEngineTest {
         URL resource = IconEngineTest.class.getClassLoader().getResource("test_icon.png");
         File testFile = new File(resource.toURI());
 
-        assertNotNull(IconEngine.getIconBufferedImage(testFile));
-        assertNotNull(IconEngine.getIconImage(testFile));
+        assertTrue(IconEngine.getIconBufferedImage(testFile) instanceof BufferedImage);
+        assertTrue(IconEngine.getIconImage(testFile) instanceof Image);
     }
 
     @Test
