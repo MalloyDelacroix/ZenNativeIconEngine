@@ -56,7 +56,6 @@ public class DllLoader {
         if (! windowsDll.exists()) {
             try {
                 InputStream dllFileStream = DllLoader.class.getClassLoader().getResourceAsStream(dllName);
-//                File outFile = new File(LIB);
                 OutputStream out = FileUtils.openOutputStream(windowsDll);
                 IOUtils.copy(dllFileStream, out);
                 dllFileStream.close();
